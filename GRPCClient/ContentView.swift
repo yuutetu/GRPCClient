@@ -24,7 +24,7 @@ struct ContentView: View {
                 .navigationBarTitle(Text("Services"))
                 .navigationBarItems(trailing:
                     Button(action: {
-                        self.masterReactor.action.on(.next(.changeToAdditionMode))
+                        self.masterReactor.action.on(.next(.additionButtonTap))
                     }, label: {
                         Image.init(systemName: "plus")
                     }))

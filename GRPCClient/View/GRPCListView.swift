@@ -7,12 +7,12 @@
 //
 
 import SwiftUI
+import Combine
 import ReactorKit
 import RxSwift
 
 struct GRPCListView: SwiftUI.View {
     @ObservedObject var viewModel: GRPCListViewModel
-    @State var additionText: String = ""
 
     init(viewModel: GRPCListViewModel) {
         self.viewModel = viewModel
@@ -21,12 +21,15 @@ struct GRPCListView: SwiftUI.View {
     var body: some SwiftUI.View {
         List {
             if viewModel.isAdditionMode {
-                KMTextField(placeholder: "{Service Name}/{Endpoint}") { text in
-                    guard let text = text else {
-                        return
-                    }
-                    self.viewModel.reactor.action.on(.next(.addEndpoint(text: text)))
-                }
+                TextField("{Service Name}/{Endpoint}", text: $viewModel.additionFormText, onCommit: {
+                    self.viewModel.reactor.action.on(.next(.addEndpoint(text: self.viewModel.additionFormText)))
+                })
+//                KMTextField(placeholder: "{Service Name}/{Endpoint}") { text in
+//                    guard let text = text else {
+//                        return
+//                    }
+//                    self.viewModel.reactor.action.on(.next(.addEndpoint(text: text)))
+//                }
             }
             ForEach(viewModel.services, id: \.self) { service in
                 Section(header: Text(service.name)) {
@@ -42,12 +45,15 @@ struct GRPCListView: SwiftUI.View {
 class GRPCListViewModel: ObservableObject {
     @Published var isAdditionMode: Bool
     @Published var services: [GRPCListViewReactor.Service]
+    @Published var additionFormText: String
     let reactor: GRPCListViewReactor
     private var disposeBag = DisposeBag()
+    private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 
     init(reactor: GRPCListViewReactor) {
         self.isAdditionMode = false
         self.services = []
+        self.additionFormText = ""
         self.reactor = reactor
 
         self.setupReactor()
@@ -57,6 +63,7 @@ class GRPCListViewModel: ObservableObject {
         reactor.state.subscribe(onNext: { [weak self] state in
             self?.isAdditionMode = state.isAdditionMode
             self?.services = state.serviceRepository.services
+            self?.additionFormText = state.additionFormText
         }, onError: { error in
             // error handling
         }, onCompleted: {
@@ -64,6 +71,10 @@ class GRPCListViewModel: ObservableObject {
         }, onDisposed: {
             // disposed
         }).disposed(by: disposeBag)
+
+        $additionFormText.sink(receiveValue: { [weak self] text in
+            self?.reactor.action.onNext(.changeAdditionFromText(text: text))
+        }).store(in: &cancellables)
     }
 }
 
@@ -76,7 +87,11 @@ class GRPCListViewReactor: Reactor {
         repository.append(serviceName: "DogService", endpointName: "CreateDog")
         repository.append(serviceName: "DogService", endpointName: "ListDogs")
         repository.append(serviceName: "DogService", endpointName: "UpdateDog")
-        return State(isAdditionMode: false, serviceRepository: repository)
+        return State(
+            isAdditionMode: false,
+            serviceRepository: repository,
+            additionFormText: ""
+        )
     }()
 
     struct Service: Hashable {
@@ -109,31 +124,40 @@ class GRPCListViewReactor: Reactor {
     }
 
     enum Action {
-        case changeToAdditionMode
+        case additionButtonTap
         case addEndpoint(text: String)
+        case changeAdditionFromText(text: String)
     }
 
     enum Mutation {
         case additionMode(activate: Bool)
         case insertService(name: String)
+        case changeAdditionFromText(text: String)
     }
 
     func mutate(action: GRPCListViewReactor.Action) -> Observable<GRPCListViewReactor.Mutation> {
         switch action {
-        case .changeToAdditionMode:
+        case .additionButtonTap:
             return .just(.additionMode(activate: true))
         case .addEndpoint(let text):
             return Observable.merge(
                 Observable.just(.insertService(name: text)),
-                Observable.just(.additionMode(activate: false))
+                Observable.just(.additionMode(activate: false)),
+                Observable.just(.changeAdditionFromText(text: ""))
             )
+        case .changeAdditionFromText(let text):
+            return .just(.changeAdditionFromText(text: text))
         }
     }
 
     func reduce(state: GRPCListViewReactor.State, mutation: GRPCListViewReactor.Mutation) -> GRPCListViewReactor.State {
         switch mutation {
         case .additionMode(let activate):
-            return State(isAdditionMode: activate, serviceRepository: state.serviceRepository)
+            return State(
+                isAdditionMode: activate,
+                serviceRepository: state.serviceRepository,
+                additionFormText: state.additionFormText
+            )
         case .insertService(let name):
             let splittedNames = name.split(separator: "/")
             guard splittedNames.count >= 2 else {
@@ -144,40 +168,50 @@ class GRPCListViewReactor: Reactor {
             let endpointName = String(splittedNames[1])
             var repository = state.serviceRepository
             repository.append(serviceName: serviceName, endpointName: endpointName)
-            return State(isAdditionMode: true, serviceRepository: repository)
+            return State(
+                isAdditionMode: state.isAdditionMode,
+                serviceRepository: repository,
+                additionFormText: state.additionFormText
+            )
+        case .changeAdditionFromText(let text):
+            return State(
+                isAdditionMode: state.isAdditionMode,
+                serviceRepository: state.serviceRepository,
+                additionFormText: text
+            )
         }
     }
 
     struct State {
         var isAdditionMode: Bool
         var serviceRepository: ServiceRepository
-//        var additionText: String
+        var additionFormText: String
     }
 }
 
-struct KMTextField: UIViewRepresentable {
-    private let textField = EnterHandlingTextField()
-    var placeholder:String?
-    var onReturnHandler:((String?)->Void)?
-
-    func makeUIView(context: UIViewRepresentableContext<KMTextField>) -> EnterHandlingTextField {
-        textField.delegate = textField
-        textField.placeholder = placeholder
-        textField.onReturnHandler = onReturnHandler
-        return textField
-    }
-
-    func updateUIView(_ uiView: EnterHandlingTextField, context: UIViewRepresentableContext<KMTextField>) {
-        uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        uiView.setContentHuggingPriority(.defaultLow, for: .horizontal)
-    }
-
-    class EnterHandlingTextField: UITextField, UITextFieldDelegate {
-        var onReturnHandler: ((String?) -> Void)?
-
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            onReturnHandler?(textField.text)
-            return true
-        }
-    }
-}
+//struct KMTextField: UIViewRepresentable {
+//    private let textField = EnterHandlingTextField()
+//    var placeholder:String?
+//    var onReturnHandler:((String?)->Void)?
+//
+//    func makeUIView(context: UIViewRepresentableContext<KMTextField>) -> EnterHandlingTextField {
+//        textField.delegate = textField
+//        textField.placeholder = placeholder
+//        textField.onReturnHandler = onReturnHandler
+//        return textField
+//    }
+//
+//    func updateUIView(_ uiView: EnterHandlingTextField, context: UIViewRepresentableContext<KMTextField>) {
+//        uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+//        uiView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+//    }
+//
+//    class EnterHandlingTextField: UITextField, UITextFieldDelegate {
+//        var onReturnHandler: ((String?) -> Void)?
+//
+//        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//            onReturnHandler?(textField.text)
+//            return true
+//        }
+//    }
+//}
