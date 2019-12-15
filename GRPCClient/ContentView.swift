@@ -16,12 +16,18 @@ private let dateFormatter: DateFormatter = {
 }()
 
 struct ContentView: View {
-    @State private var dates = [Date]()
+    let masterReactor = GRPCListViewReactor()
 
     var body: some View {
         NavigationView {
-            GRPCListView(viewModel: GRPCListViewModel())
+            GRPCListView(viewModel: GRPCListViewModel(reactor: masterReactor))
                 .navigationBarTitle(Text("Services"))
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        self.masterReactor.action.on(.next(.changeToAdditionMode))
+                    }, label: {
+                        Image.init(systemName: "plus")
+                    }))
             DetailView()
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
