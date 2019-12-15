@@ -1,0 +1,20 @@
+PODS:
+  - ReactorKit (2.0.1):
+    - RxSwift (~> 5.0)
+  - RxSwift (5.0.1)
+
+DEPENDENCIES:
+  - ReactorKit
+
+SPEC REPOS:
+  trunk:
+    - ReactorKit
+    - RxSwift
+
+SPEC CHECKSUMS:
+  ReactorKit: a63c5e11e0fd32d59d672e54178b0ed2876b764b
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+
+PODFILE CHECKSUM: 89f2690561382e4d51eec38397be7c57927a706c
+
+COCOAPODS: 1.8.4

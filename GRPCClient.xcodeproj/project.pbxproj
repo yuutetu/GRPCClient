@@ -16,6 +16,9 @@
 		20E7B9F223A5C8F6000BA880 /* GRPCClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7B9F123A5C8F6000BA880 /* GRPCClientTests.swift */; };
 		20E7B9FD23A5C8F6000BA880 /* GRPCClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7B9FC23A5C8F6000BA880 /* GRPCClientUITests.swift */; };
 		20E7BA0C23A5E04E000BA880 /* GRPCListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7BA0B23A5E04E000BA880 /* GRPCListView.swift */; };
+		428FA3CA7DE6BFCFB7DCDF51 /* Pods_GRPCClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A612A5D7425C70DB1930479 /* Pods_GRPCClientTests.framework */; };
+		4941B265FA03733AD822BBBB /* Pods_GRPCClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C37BC6167E367E870485D7 /* Pods_GRPCClient.framework */; };
+		84A8D6F18488A8603A6C8EAC /* Pods_GRPCClient_GRPCClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2484143D0C2DADF06816FDB /* Pods_GRPCClient_GRPCClientUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,15 @@
 		20E7B9FC23A5C8F6000BA880 /* GRPCClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCClientUITests.swift; sourceTree = "<group>"; };
 		20E7B9FE23A5C8F6000BA880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20E7BA0B23A5E04E000BA880 /* GRPCListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCListView.swift; sourceTree = "<group>"; };
+		5A612A5D7425C70DB1930479 /* Pods_GRPCClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRPCClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64EF327EDA9E483AB1F6B679 /* Pods-GRPCClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRPCClient.release.xcconfig"; path = "Target Support Files/Pods-GRPCClient/Pods-GRPCClient.release.xcconfig"; sourceTree = "<group>"; };
+		672D111E9EC4D01BC681570E /* Pods-GRPCClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRPCClientTests.release.xcconfig"; path = "Target Support Files/Pods-GRPCClientTests/Pods-GRPCClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		67C37BC6167E367E870485D7 /* Pods_GRPCClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRPCClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C2DC17D65C8E432CFC954F7 /* Pods-GRPCClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRPCClientTests.debug.xcconfig"; path = "Target Support Files/Pods-GRPCClientTests/Pods-GRPCClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D0D98684A57E6EFD6940419 /* Pods-GRPCClient-GRPCClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRPCClient-GRPCClientUITests.debug.xcconfig"; path = "Target Support Files/Pods-GRPCClient-GRPCClientUITests/Pods-GRPCClient-GRPCClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1A0AC910E3EDF6369723C5E /* Pods-GRPCClient-GRPCClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRPCClient-GRPCClientUITests.release.xcconfig"; path = "Target Support Files/Pods-GRPCClient-GRPCClientUITests/Pods-GRPCClient-GRPCClientUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A2484143D0C2DADF06816FDB /* Pods_GRPCClient_GRPCClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRPCClient_GRPCClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5ABD6AAFCC6937526DB86C /* Pods-GRPCClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRPCClient.debug.xcconfig"; path = "Target Support Files/Pods-GRPCClient/Pods-GRPCClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4941B265FA03733AD822BBBB /* Pods_GRPCClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428FA3CA7DE6BFCFB7DCDF51 /* Pods_GRPCClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A8D6F18488A8603A6C8EAC /* Pods_GRPCClient_GRPCClientUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,8 @@
 				20E7B9F023A5C8F6000BA880 /* GRPCClientTests */,
 				20E7B9FB23A5C8F6000BA880 /* GRPCClientUITests */,
 				20E7B9D823A5C8F4000BA880 /* Products */,
+				ADBABD65552D7F0BB6DF71B9 /* Pods */,
+				81C2ADC14F4924EECBFB7F1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +164,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		81C2ADC14F4924EECBFB7F1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67C37BC6167E367E870485D7 /* Pods_GRPCClient.framework */,
+				A2484143D0C2DADF06816FDB /* Pods_GRPCClient_GRPCClientUITests.framework */,
+				5A612A5D7425C70DB1930479 /* Pods_GRPCClientTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADBABD65552D7F0BB6DF71B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD5ABD6AAFCC6937526DB86C /* Pods-GRPCClient.debug.xcconfig */,
+				64EF327EDA9E483AB1F6B679 /* Pods-GRPCClient.release.xcconfig */,
+				7D0D98684A57E6EFD6940419 /* Pods-GRPCClient-GRPCClientUITests.debug.xcconfig */,
+				A1A0AC910E3EDF6369723C5E /* Pods-GRPCClient-GRPCClientUITests.release.xcconfig */,
+				6C2DC17D65C8E432CFC954F7 /* Pods-GRPCClientTests.debug.xcconfig */,
+				672D111E9EC4D01BC681570E /* Pods-GRPCClientTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20E7BA0123A5C8F6000BA880 /* Build configuration list for PBXNativeTarget "GRPCClient" */;
 			buildPhases = (
+				B5483E9CF842779FF61256DA /* [CP] Check Pods Manifest.lock */,
 				20E7B9D323A5C8F4000BA880 /* Sources */,
 				20E7B9D423A5C8F4000BA880 /* Frameworks */,
 				20E7B9D523A5C8F4000BA880 /* Resources */,
+				A07BC01567863B83EBBFE02B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20E7BA0423A5C8F6000BA880 /* Build configuration list for PBXNativeTarget "GRPCClientTests" */;
 			buildPhases = (
+				AD67E351839EAB3E6737D558 /* [CP] Check Pods Manifest.lock */,
 				20E7B9E923A5C8F6000BA880 /* Sources */,
 				20E7B9EA23A5C8F6000BA880 /* Frameworks */,
 				20E7B9EB23A5C8F6000BA880 /* Resources */,
@@ -189,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20E7BA0723A5C8F6000BA880 /* Build configuration list for PBXNativeTarget "GRPCClientUITests" */;
 			buildPhases = (
+				98A1E518F27322FF6AFB6F00 /* [CP] Check Pods Manifest.lock */,
 				20E7B9F423A5C8F6000BA880 /* Sources */,
 				20E7B9F523A5C8F6000BA880 /* Frameworks */,
 				20E7B9F623A5C8F6000BA880 /* Resources */,
+				84B4676EA4A92FD0787C3ABD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +318,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84B4676EA4A92FD0787C3ABD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRPCClient-GRPCClientUITests/Pods-GRPCClient-GRPCClientUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRPCClient-GRPCClientUITests/Pods-GRPCClient-GRPCClientUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GRPCClient-GRPCClientUITests/Pods-GRPCClient-GRPCClientUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98A1E518F27322FF6AFB6F00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GRPCClient-GRPCClientUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A07BC01567863B83EBBFE02B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRPCClient/Pods-GRPCClient-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GRPCClient/Pods-GRPCClient-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GRPCClient/Pods-GRPCClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD67E351839EAB3E6737D558 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GRPCClientTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5483E9CF842779FF61256DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GRPCClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		20E7B9D323A5C8F4000BA880 /* Sources */ = {
@@ -444,6 +593,7 @@
 		};
 		20E7BA0223A5C8F6000BA880 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD5ABD6AAFCC6937526DB86C /* Pods-GRPCClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +614,7 @@
 		};
 		20E7BA0323A5C8F6000BA880 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64EF327EDA9E483AB1F6B679 /* Pods-GRPCClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +635,7 @@
 		};
 		20E7BA0523A5C8F6000BA880 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C2DC17D65C8E432CFC954F7 /* Pods-GRPCClientTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +658,7 @@
 		};
 		20E7BA0623A5C8F6000BA880 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 672D111E9EC4D01BC681570E /* Pods-GRPCClientTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +681,7 @@
 		};
 		20E7BA0823A5C8F6000BA880 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D0D98684A57E6EFD6940419 /* Pods-GRPCClient-GRPCClientUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +702,7 @@
 		};
 		20E7BA0923A5C8F6000BA880 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1A0AC910E3EDF6369723C5E /* Pods-GRPCClient-GRPCClientUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
