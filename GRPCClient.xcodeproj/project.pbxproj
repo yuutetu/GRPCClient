@@ -15,6 +15,7 @@
 		20E7B9E723A5C8F6000BA880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E7B9E523A5C8F6000BA880 /* LaunchScreen.storyboard */; };
 		20E7B9F223A5C8F6000BA880 /* GRPCClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7B9F123A5C8F6000BA880 /* GRPCClientTests.swift */; };
 		20E7B9FD23A5C8F6000BA880 /* GRPCClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7B9FC23A5C8F6000BA880 /* GRPCClientUITests.swift */; };
+		20E7BA0C23A5E04E000BA880 /* GRPCListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7BA0B23A5E04E000BA880 /* GRPCListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		20E7B9F823A5C8F6000BA880 /* GRPCClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GRPCClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E7B9FC23A5C8F6000BA880 /* GRPCClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCClientUITests.swift; sourceTree = "<group>"; };
 		20E7B9FE23A5C8F6000BA880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20E7BA0B23A5E04E000BA880 /* GRPCListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		20E7B9D923A5C8F4000BA880 /* GRPCClient */ = {
 			isa = PBXGroup;
 			children = (
+				20E7BA0A23A5E033000BA880 /* View */,
 				20E7B9DA23A5C8F4000BA880 /* AppDelegate.swift */,
 				20E7B9DC23A5C8F4000BA880 /* SceneDelegate.swift */,
 				20E7B9DE23A5C8F4000BA880 /* ContentView.swift */,
@@ -134,6 +137,14 @@
 				20E7B9FE23A5C8F6000BA880 /* Info.plist */,
 			);
 			path = GRPCClientUITests;
+			sourceTree = "<group>";
+		};
+		20E7BA0A23A5E033000BA880 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20E7BA0B23A5E04E000BA880 /* GRPCListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E7BA0C23A5E04E000BA880 /* GRPCListView.swift in Sources */,
 				20E7B9DB23A5C8F4000BA880 /* AppDelegate.swift in Sources */,
 				20E7B9DD23A5C8F4000BA880 /* SceneDelegate.swift in Sources */,
 				20E7B9DF23A5C8F4000BA880 /* ContentView.swift in Sources */,
