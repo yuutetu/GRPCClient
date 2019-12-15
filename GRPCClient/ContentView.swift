@@ -20,18 +20,8 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            MasterView(dates: $dates)
-                .navigationBarTitle(Text("Master"))
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing: Button(
-                        action: {
-                            withAnimation { self.dates.insert(Date(), at: 0) }
-                        }
-                    ) {
-                        Image(systemName: "plus")
-                    }
-                )
+            GRPCListView(viewModel: GRPCListViewModel())
+                .navigationBarTitle(Text("Services"))
             DetailView()
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
